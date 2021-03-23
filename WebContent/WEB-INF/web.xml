@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>it-companies</display-name>
-  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>LeaveApplication</display-name>
   <welcome-file-list>
-  <welcome-file>praveenCycle.html</welcome-file>
-    <welcome-file>company.html</welcome-file>
-    <welcome-file>index.html</welcome-file>
-    
+    <welcome-file>leave.html</welcome-file>
   </welcome-file-list>
   <servlet>
-  <servlet-name>industry</servlet-name>
-  <servlet-class>com.xworkz.it.web.Industry</servlet-class>
+  <servlet-name>leaveApplication</servlet-name>
+  <servlet-class>com.xworkz.leave.LeaveApplication</servlet-class>
   <load-on-startup>1</load-on-startup>
   </servlet>
+  <servlet-mapping>
+  <servlet-name>leaveApplication</servlet-name>
+  <url-pattern>/leaveAction</url-pattern>
+  </servlet-mapping>
   <servlet>
-   <servlet-name>lifeCycleServelet</servlet-name>
-  <servlet-class>com.xworkz.it.web.LifeCycleServelet</servlet-class>
-  <load-on-startup>3</load-on-startup>
+    <servlet-name>leaveServletGetByName</servlet-name>
+  <servlet-class>com.xworkz.leave.LeaveServletGetByName</servlet-class>
+  <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-  <servlet-name>lifeCycleServelet</servlet-name>
-  <url-pattern>/cycleAction</url-pattern>
+  <servlet-name>leaveServletGetByName</servlet-name>
+  <url-pattern>/searchByName</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
-  <servlet-name>industry</servlet-name>
-  <url-pattern>/industryAction</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  <servlet-name>itIndustry</servlet-name>
-  <servlet-class>com.xworkz.it.web.ItIndustry</servlet-class>
-  <load-on-startup>2</load-on-startup>
-  </servlet>
 </web-app>
